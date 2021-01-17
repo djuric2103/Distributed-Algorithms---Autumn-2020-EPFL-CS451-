@@ -1,0 +1,5 @@
+python3 barrier.py --host localhost --port 10000 --processes 5
+python3 finishedSignal.py --host localhost --port 10001 --processes 5
+python3 validate.py -r template_java/run.sh -b lcausal -l outputs -p 5 -m 100
+./run.sh --id 1 --hosts hosts.txt --barrier 127.0.0.1:10000 --signal 127.0.0.1:10001 --output outputs config.txt
+python3 validate_LCB.py -r template_java/run.sh -b lcausal -l outputs -p 5 -m 100
